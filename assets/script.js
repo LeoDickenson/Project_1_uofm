@@ -1,4 +1,21 @@
-// nuthin
+
+fetch("https://rest.bandsintown.com/artists/Justin%20Beiber?app_id=510")
+.then(function(response){
+    return response.json();
+})
+
+.then(function(data){
+    console.log(data);
+})
+
+fetch("https://rest.bandsintown.com/artists/Maroon%205/events?app_id=510&date=upcoming")
+.then(function(response){
+    return response.json();
+})
+
+.then(function(data){
+    console.log(data);
+})
 
 // function getApi() {
 
@@ -27,7 +44,7 @@
 // })
 
 
-// document.addEventListener()
+document.getElementByID(".btn").addEventListener("click",function() {
 
     fetch('https://api.openbrewerydb.org/breweries?by_city=Minneapolis&per_page=5')
         .then(function(response) {
@@ -35,9 +52,10 @@
         })
         .then(function(data) {
             console.log(data);
+            var brewery = data[0].name;
+            // console.log(brewery);
+
         })
         
-    var brewery = data[0].name;
-            console.log(brewery);
-    // document.getElementById()
+    })  
     
