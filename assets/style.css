@@ -1,0 +1,17 @@
+html {
+    background-image: url("https://cdn.craftbeer.com/wp-content/uploads/Hardywood-Taproom-with-band.jpg");
+    background-color: #cccccc;
+   }
+
+#brewArticle {
+    background-color: #0000006b;
+    border-radius: 5px;
+}
+#eventArticle {
+    background-color: #0000006b;
+    border-radius: 5px;
+}
+#chooseArticle {
+    background-color: #0000006b;
+    border-radius: 5px;
+}

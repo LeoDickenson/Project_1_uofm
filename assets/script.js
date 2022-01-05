@@ -36,7 +36,6 @@ fetch("https://rest.bandsintown.com/artists/justin beiber/events?app_id=510&date
 })
 })
 
-// add aleart/error when nothing is showing.
 document.querySelector("#eventCity1").addEventListener("click",function() {
     console.log(eventCity);
     fetch('https://api.openbrewerydb.org/breweries?by_city='+eventCity+'&per_page=6')
