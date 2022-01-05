@@ -27,6 +27,7 @@ fetch("https://rest.bandsintown.com/artists/Maroon%205/events?app_id=510&date=up
 //         })
     
 //     }
+// $('.btn-primary').on('click',function(){
 
 // var icon = "https://api.openweathermap.org/img/w/" + data.weather[0].icon + ".png";
 // var temp = Math.floor(data.main.temp);
@@ -44,7 +45,7 @@ fetch("https://rest.bandsintown.com/artists/Maroon%205/events?app_id=510&date=up
 // })
 
 
-document.getElementByID(".btn").addEventListener("click",function() {
+document.querySelector("#btn").addEventListener("click",function() {
 
     fetch('https://api.openbrewerydb.org/breweries?by_city=Minneapolis&per_page=5')
         .then(function(response) {
@@ -52,9 +53,13 @@ document.getElementByID(".btn").addEventListener("click",function() {
         })
         .then(function(data) {
             console.log(data);
+            
             var brewery = data[0].name;
+            var website = data[0].website_url;
             // console.log(brewery);
 
+            document.querySelector("#brew-site1a").textContent = brewery;
+            document.querySelector("#brew-site1b").textContent = website;
         })
         
     })  
