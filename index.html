@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bands/Brews</title>
-    <link rel="stylesheet" href="./assets/reset.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-    <link rel="stylesheet" href="./assets/style.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bands/Brews</title>
+  <link rel="stylesheet" href="./assets/reset.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  <link rel="stylesheet" href="./assets/style.css">
 </head>
+
 <body>
 
     <section class="hero is-small is-warning">
@@ -24,7 +26,7 @@
 <br>
       <section class="columns">
         <div class="column">
-            <article class="panel is-link">
+            <article class="panel is-link" id="chooseArticle">
         <p class="panel-heading">
           Choose an Artist
         </p>
@@ -55,7 +57,7 @@
     </div>
     
     <div class="column">
-      <article class="panel is-danger">
+      <article class="panel is-primary" id="eventArticle">
           <p class="panel-heading">
             Artist Event
           </p>
@@ -77,12 +79,11 @@
         </article>
     </div>
       <div class="column">
-        <article class="panel is-success">
+        <article class="panel is-success is-danger" id="brewArticle">
             <p class="panel-heading">
               Breweries
             </p>
-            <a class="panel-block is-active">
-              <a type="text" id="brew-site1b"></a>
+            <a class="panel-block is-active" type="text" id="brew-site1b"></a>
             </a>
             <a class="panel-block">
               <a type="text" id="brew-site2b"></a>
@@ -94,18 +95,14 @@
               <a type="text" id="brew-site4b"></a>
             </a>
             <a class="panel-block">
-                <span class="panel-icon">
-                  <i class="fas fa-book" aria-hidden="true"></i>
-                </span>
-                <!-- <div type="text" id="brew-site4a"></div> -->
-                <a type="text" id="brew-site5b"></a>
+              <a type="text" id="brew-site5b"></a>
               </a>
           </article>
       </div>
 
     </section>
 
-<script src="./assets/script.js"></script>
+  <script src="./assets/script.js"></script>
 </body>
 
 </html>
