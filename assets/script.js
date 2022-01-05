@@ -32,41 +32,33 @@ document.querySelector("#btn").addEventListener("click",function() {
             var website = data[0].website_url;
             // console.log(brewery);
 
-            // document.querySelector("#brew-site1a").textContent = brewery;
             document.querySelector("#brew-site1b").textContent = brewery;
             document.querySelector("#brew-site1b").setAttribute("href", website);
 
             var brewery = data[1].name;
             var website = data[1].website_url;
-            // console.log(brewery);
 
-            // document.querySelector("#brew-site2a").textContent = brewery;
             document.querySelector("#brew-site2b").textContent = brewery;
             document.querySelector("#brew-site2b").setAttribute("href", website);
 
 
             var brewery = data[2].name;
             var website = data[2].website_url;
-            // console.log(brewery);
 
-            // document.querySelector("#brew-site3a").textContent = brewery;
             document.querySelector("#brew-site3b").textContent = brewery;
             document.querySelector("#brew-site3b").setAttribute("href", website);
 
             var brewery = data[3].name;
             var website = data[3].website_url;
-            // console.log(brewery);
 
-            // document.querySelector("#brew-site4a").textContent = brewery;
             document.querySelector("#brew-site4b").textContent = brewery;
             document.querySelector("#brew-site4b").setAttribute("href", website);
 
-            // var brewery = data[4].name;
-            // var website = data[4].website_url;
-            // // console.log(brewery);
+            var brewery = data[4].name;
+            var website = data[4].website_url;
 
-            // document.querySelector("#brew-site5b").textContent = brewery;
-            // document.querySelector("#brew-site5b").setAttribute("href", website);
+            document.querySelector("#brew-site5b").textContent = brewery;
+            document.querySelector("#brew-site5b").setAttribute("href", website);
         })
         
     })  
