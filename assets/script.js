@@ -17,32 +17,6 @@ fetch("https://rest.bandsintown.com/artists/Maroon%205/events?app_id=510&date=up
     console.log(data);
 })
 
-// function getApi() {
-
-//     var requestUrl = 'https://api.openbrewerydb.org/breweries?by_city=minneapolis&per_page=10';
-
-//     fetch(requestUrl)
-//         .then(function(response) {
-//             return response.json();;
-//         })
-    
-//     }
-// $('.btn-primary').on('click',function(){
-
-// var icon = "https://api.openweathermap.org/img/w/" + data.weather[0].icon + ".png";
-// var temp = Math.floor(data.main.temp);
-// var wind = data.wind.speed;
-// var humidity = data.main.humidity;
-// var description = data.weather[0].description;
-// var userCity = data.name;
-
-// $("#weatherDescription").append(description);
-// $("#icon").attr("src", icon);
-// $("#temp").append("Temp " + temp + " °F");
-// $("#wind").append("Wind " + wind + " MPH");
-// $("#humidity").append("Humidity " + humidity + "%");
-// $("#city").append(userCity);
-// })
 
 
 document.querySelector("#btn").addEventListener("click",function() {
@@ -58,8 +32,41 @@ document.querySelector("#btn").addEventListener("click",function() {
             var website = data[0].website_url;
             // console.log(brewery);
 
-            document.querySelector("#brew-site1a").textContent = brewery;
-            document.querySelector("#brew-site1b").textContent = website;
+            // document.querySelector("#brew-site1a").textContent = brewery;
+            document.querySelector("#brew-site1b").textContent = brewery;
+            document.querySelector("#brew-site1b").setAttribute("href", website);
+
+            var brewery = data[1].name;
+            var website = data[1].website_url;
+            // console.log(brewery);
+
+            // document.querySelector("#brew-site2a").textContent = brewery;
+            document.querySelector("#brew-site2b").textContent = brewery;
+            document.querySelector("#brew-site2b").setAttribute("href", website);
+
+
+            var brewery = data[2].name;
+            var website = data[2].website_url;
+            // console.log(brewery);
+
+            // document.querySelector("#brew-site3a").textContent = brewery;
+            document.querySelector("#brew-site3b").textContent = brewery;
+            document.querySelector("#brew-site3b").setAttribute("href", website);
+
+            var brewery = data[3].name;
+            var website = data[3].website_url;
+            // console.log(brewery);
+
+            // document.querySelector("#brew-site4a").textContent = brewery;
+            document.querySelector("#brew-site4b").textContent = brewery;
+            document.querySelector("#brew-site4b").setAttribute("href", website);
+
+            // var brewery = data[4].name;
+            // var website = data[4].website_url;
+            // // console.log(brewery);
+
+            // document.querySelector("#brew-site5b").textContent = brewery;
+            // document.querySelector("#brew-site5b").setAttribute("href", website);
         })
         
     })  
