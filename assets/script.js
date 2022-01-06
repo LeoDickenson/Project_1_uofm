@@ -83,3 +83,25 @@ document.querySelector("#eventArticle").addEventListener("click",function(e) {
         })
         
     })
+
+    //HISTORY FUNCTION TEMPLATE
+//     function addHistory() {
+//         historyThree.textContent = historyTwo.textContent
+//         historyTwo.textContent = historyOne.textContent
+//         historyOne.textContent = userInput.value
+//         localStorage.setItem('histSlot1',historyOne.textContent)
+//         localStorage.setItem('histSlot2',historyTwo.textContent)
+//         localStorage.setItem('histSlot3',historyThree.textContent)
+//         return
+// }
+document.querySelector("#brew-site5b").textContent = "Bob's Brews"
+document.querySelector("#brew-site4b").textContent = "World's Best Brews"
+document.querySelector("#brew-site3b").textContent = "Slick Brews"
+document.querySelector("#brew-site2b").textContent = "Friendly Brews"
+document.querySelector("#brew-site1b").textContent = "Brews By Betty"
+
+document.querySelector("#eventCity5").textContent = "Bob's City"
+document.querySelector("#eventCity4").textContent = "World's Best City"
+document.querySelector("#eventCity3").textContent = "Slick City"
+document.querySelector("#eventCity2").textContent = "Friendly City"
+document.querySelector("#eventCity1").textContent = "City By Betty"
