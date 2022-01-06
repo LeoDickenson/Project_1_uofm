@@ -1,17 +1,6 @@
 
-// var eventCity = fetch("https://rest.bandsintown.com/artists/Maroon%205/events?app_id=510&date=upcoming")
-// .then(function(response){
-//     return response.json();
-//     console.log(eventCity);
-// })
 
-// .then(function(data){
-//     console.log(data);
-
-//     var city = data[0].venue.city;
-// });
-
-var eventCity = '';
+var eventCity = [];
 document.querySelector("#btn").addEventListener("click",function() {
 fetch("https://rest.bandsintown.com/artists/justin beiber/events?app_id=510&date=upcoming&per_page=5")
 .then(function(response){
@@ -21,24 +10,35 @@ fetch("https://rest.bandsintown.com/artists/justin beiber/events?app_id=510&date
 .then(function(data){
     console.log(data);
 
-    eventCity = data[0].venue.city;
-    document.querySelector("#eventCity1").textContent = eventCity;
-    eventCity = data[1].venue.city;
-    document.querySelector("#eventCity2").textContent = eventCity;
-    eventCity = data[2].venue.city;
-    document.querySelector("#eventCity3").textContent = eventCity;
-    eventCity = data[3].venue.city;
-    document.querySelector("#eventCity4").textContent = eventCity;
-    eventCity = data[4].venue.city;
-    document.querySelector("#eventCity5").textContent = eventCity;
-    console.log(eventCity);
+    eventCity[0] = data[0].venue.city;
+    document.querySelector("#eventCity1").textContent = eventCity[0];
+    // console.log(eventCity);
+
+    eventCity[1] = data[1].venue.city;
+    document.querySelector("#eventCity2").textContent = eventCity[1];
+    // console.log(eventCity);
+
+    eventCity[2] = data[2].venue.city;
+    document.querySelector("#eventCity3").textContent = eventCity[2];
+    // console.log(eventCity);
+
+    eventCity[3] = data[3].venue.city;
+    document.querySelector("#eventCity4").textContent = eventCity[3];
+    // console.log(eventCity);
+
+    eventCity[4] = data[4].venue.city;
+    document.querySelector("#eventCity5").textContent = eventCity[4];
+    // console.log(eventCity);
+
 
 })
 })
 
-document.querySelector("#eventCity1").addEventListener("click",function() {
-    console.log(eventCity);
-    fetch('https://api.openbrewerydb.org/breweries?by_city='+eventCity+'&per_page=6')
+document.querySelector("#eventArticle").addEventListener("click",function(e) {
+    console.log(e.target.textContent);
+    var userCity= e.target.textContent;
+
+    fetch('https://api.openbrewerydb.org/breweries?by_city='+userCity+'&per_page=6')
         .then(function(response) {
             return response.json();
         })
@@ -78,4 +78,4 @@ document.querySelector("#eventCity1").addEventListener("click",function() {
             document.querySelector("#brew-site5b").setAttribute("href", website);
         })
         
-    })  
+    })
