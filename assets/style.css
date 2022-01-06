@@ -4,14 +4,37 @@ html {
    }
 
 #brewArticle {
-    background-color: #0000006b;
+    background-color: #ffe08a8e;
     border-radius: 5px;
+    margin-right: 15px;
+}
+#brewHeading{
+    background-color: hsla(348, 100%, 61%, 0.6);
+    color: hsl(0, 0%, 0%, 0.7);
 }
 #eventArticle {
-    background-color: #0000006b;
+    background-color: #ffe08a8e;
     border-radius: 5px;
 }
+#eventHeading{
+    background-color: hsl(171, 100%, 41%, 0.6);
+    color: hsl(0, 0%, 0%, 0.7);
+}
 #chooseArticle {
-    background-color: #0000006b;
+    background-color: #ffe08a8e;
     border-radius: 5px;
+    margin-left: 15px;
+}
+#chooseHeading{
+    background-color: hsl(217, 71%, 53%, 0.6);
+    color: hsl(0, 0%, 0%, 0.7);
+}
+#bannertitle {
+    background-color: #ffe08a8e;
+}
+#headtitle {
+    color: hsl(0, 0%, 0%, 0.7);
+}
+#headsub {
+    color: hsl(0, 0%, 0%, 0.7);
 }
