@@ -7,6 +7,7 @@ html {
     background-color: hsla(44, 100%, 77%, 0.75);
     border-radius: 5px;
     margin-right: 15px;
+    font-weight: bolder;
 }
 #brewHeading{
     background-color: hsla(348, 100%, 61%, 0.6);
@@ -15,6 +16,8 @@ html {
 #eventArticle {
     background-color: hsla(44, 100%, 77%, 0.75);
     border-radius: 5px;
+    color: black;
+    font-weight: bolder;
 }
 #eventHeading{
     background-color: hsl(171, 100%, 41%, 0.6);
