@@ -12,20 +12,25 @@
 </head>
 
 <body>
-
-    <section class="hero is-small is-warning" id="bannertitle">
-        <div class="hero-body" id="herobody">
-          <p class="title" id="headtitle">
-            Bands and Brews
-          </p>
-          <p class="subtitle" id="headsub">
-            Grab a drink before any show
-          </p>
+  <section class="hero is-small is-warning" id="bannertitle">
+    <div class="hero-body" id="herobody">
+      <p class="title" id="headtitle">
+        Bands and Brews
+      </p>
+      <div class="navbar-menu is-flex" id="aboutNav">
+        <div class="navbar-end is-clickable is-size-4" id="aboutTxt">
+          About
         </div>
-      </section>
+      </div>
+      <!-- <p class="subtitle" id="headsub">
+        Grab a drink before any show
+      </p> -->
+    </div>
+  </section>
+
 <br>
       <section class="columns">
-        <div class="column" >
+        <div class="column" id="card1" >
             <article class="panel is-link" id="chooseArticle">
         <p class="panel-heading" id="chooseHeading">
           Choose an Artist
@@ -41,27 +46,29 @@
             </span>
           </p>
         </div>
+
         <a class="panel-block is-active">
           <!-- Chicago -->
         </a>
-        <a class="panel-block">
+        <a class="panel-block is-active">
           <!-- Des Moines -->
         </a>
-        <a class="panel-block">
+        <a class="panel-block is-active">
           <!-- Minneapolis -->
         </a>
-        <a class="panel-block">
+        <a class="panel-block is-active">
           <!-- Detroit -->
         </a>
       </article>
+
     </div>
     
-    <div class="column">
+    <div class="column" id="card2">
       <article class="panel is-primary" id="eventArticle">
           <p class="panel-heading" id="eventHeading">
             Choose a Show
           </p>
-          <a type="text" class="panel-block is-active" id="eventCity1">
+          <a type="text" class="panel-block is-active" id="eventCity1" aria-placeholder="test">
             <!-- Event: City -->
           </a>
           <a type="text" class="panel-block is-active" id="eventCity2">
@@ -78,27 +85,23 @@
           </a>
         </article>
     </div>
-      <div class="column">
+
+    <div class="column" id="card3">
         <article class="panel is-success is-danger" id="brewArticle">
             <p class="panel-heading" id="brewHeading">
               Choose a Brewery
             </p>
-            <a class="panel-block is-active" type="text" id="brew-site1b"></a>
-            </a>
-            <a class="panel-block">
-              <a type="text" id="brew-site2b"></a>
-            </a>
-            <a class="panel-block">
-              <a type="text" id="brew-site3b"></a>
-            </a>
-            <a class="panel-block">
-              <a type="text" id="brew-site4b"></a>
-            </a>
-            <a class="panel-block">
-              <a type="text" id="brew-site5b"></a>
-              </a>
+              <a class="panel-block is-active" type="text" id="brew-site1b"></a>
+            
+              <a class="panel-block is-active" type="text" id="brew-site2b"></a>
+            
+              <a class="panel-block is-active" type="text" id="brew-site3b"></a>
+            
+              <a class="panel-block is-active" type="text" id="brew-site4b"></a>
+
+              <a class="panel-block is-active" type="text" id="brew-site5b"></a>
           </article>
-      </div>
+    </div>
 
     </section>
 
