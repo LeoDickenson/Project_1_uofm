@@ -2,9 +2,40 @@
 
 var eventCity = [];
 var artistSelect = document.querySelector("#userArtist");
+var artistList = [];
+var artist = document.querySelector("#artist-list");
+var artistCount = document.querySelector("#artist-count");
+var artistInput = document.querySelector("#submit");
 
+function renderArtist() {
+    artist.innerHTML ="";
+    artistCount.textContent = artistList.length;
 
-document.querySelector("#btn").addEventListener("click",function() {
+    for (var i = 0; i < artistList.length; i++) {
+        var artistName = artistList[i];
+
+        var li = document.createElement("li");
+        li.textContent = artistName;
+        li.setAttribute("data-index", i);
+
+        artist.appendChild(li);
+    }
+}
+
+function init() {
+    var storedArtist = JSON.parse(localStorage.getItem("artistList"));
+    if (storedArtist !== null) {
+        artistList = storedArtist;
+    }
+    // renderArtist();
+}
+
+function storeArtist() {
+    localStorage.setItem("artistList",JSON.stringify(artistList));
+}
+
+document.querySelector("#btn").addEventListener("click",function(event) {
+    event.preventDefault();
     console.log(artistSelect.value);
 fetch("https://rest.bandsintown.com/artists/"+artistSelect.value+"/events?app_id=510&date=upcoming")
 .then(function(response){
@@ -35,8 +66,51 @@ fetch("https://rest.bandsintown.com/artists/"+artistSelect.value+"/events?app_id
     // console.log(eventCity);
 
 
+    // function renderArtist() {
+    //     artist.innerHTML ="";
+    //     artistCount.textContent = artistList.length;
+
+    //     for (var i = 0; i < artistList.length; i++) {
+    //         var artistList = artistList[i];
+
+    //         var li = document.createElement("li");
+    //         li.textContent = artistList;
+    //         li.setAttribute("data-index", i);
+
+    //         artist.appendChild(li);
+    //     }
+    // }
+
+    // function init() {
+    //     var storedArtist = JSON.parse(localStorage.getItem("artistList"));
+    //     if (storedArtist !== null) {
+    //         artistList = storedArtist;
+    //     }
+    //     renderArtist();
+    // }
+
+    // function storeArtist() {
+    //     localStorage.setItem("artistList",JSON.stringify(artistList));
+    // }
+
+    var artistText = artistSelect.value.trim()
+
+    if (artistText === "") {
+        return;
+    }
+
+    artistList.push(artistText);
+    artistSelect.value = "";
+
+    storeArtist();
+    renderArtist();
+    // init();
+
 })
+
 })
+
+init();
 
 document.querySelector("#eventArticle").addEventListener("click",function(e) {
     console.log(e.target.textContent);
