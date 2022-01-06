@@ -1,8 +1,12 @@
 
 
 var eventCity = [];
+var artistSelect = document.querySelector("#userArtist");
+
+
 document.querySelector("#btn").addEventListener("click",function() {
-fetch("https://rest.bandsintown.com/artists/justin beiber/events?app_id=510&date=upcoming&per_page=5")
+    console.log(artistSelect.value);
+fetch("https://rest.bandsintown.com/artists/"+artistSelect.value+"/events?app_id=510&date=upcoming")
 .then(function(response){
     return response.json();
 })
