@@ -76,7 +76,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelector("#btn").addEventListener("click", function (event) {
         console.log(artistSelect.value);
+
+
+        if (artistSelect.value === "") {
+            console.log("zero");
+            function openModal($el) {
+                console.log($el);
+                $el.classList.add('is-active');
+            }
+
+            (document.querySelectorAll('.js-modal-trigger') || []).forEach(($trigger) => {
+                const modal = $trigger.dataset.target;
+                const $target = document.getElementById(modal);
+                console.log($target);
+                console.log($trigger);
+
+                // $trigger.addEventListener('click', () => {
+                //     console.log("hello");
+                openModal($target);
+                // });
+            });
+        }
+
         fetchAPI(artistSelect.value)
+
+
     })
 
     function fetchAPI(artist) {
@@ -105,6 +129,11 @@ document.addEventListener('DOMContentLoaded', () => {
                         openModal($target);
                     });
                 }
+                else{
+
+               
+
+                
 
                 eventCity[0] = data[0].venue.city;
                 document.querySelector("#eventCity1").textContent = eventCity[0];
@@ -132,6 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 storeArtist();
                 renderArtist();
+            }
 
             })
     }
