@@ -8,7 +8,6 @@ var artistSelect = document.querySelector("#userArtist");
 var artistList = [];
 var artist = document.querySelector("#artist-list");
 var artistCount = document.querySelector("#artist-count");
-var artistInput = document.querySelector("#submit");
 
 function closeModal($el) {
     $el.classList.remove('is-active');
@@ -49,6 +48,7 @@ function renderArtist() {
         
         var button = document.createElement("button");
         button.textContent = "Delete";
+        button.setAttribute("class","DelBtn")
 
         li.appendChild(button);
         artist.appendChild(li);
