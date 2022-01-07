@@ -1,14 +1,12 @@
 
-
 document.addEventListener('DOMContentLoaded', () => {
-
 
 var eventCity = [];
 var artistSelect = document.querySelector("#userArtist");
 var artistList = [];
 var artist = document.querySelector("#artist-list");
 var artistCount = document.querySelector("#artist-count");
-var artistInput = document.querySelector("#submit");
+// var artistInput = document.querySelector("#submit");
 
 function closeModal($el) {
     $el.classList.remove('is-active');
@@ -95,10 +93,7 @@ fetch("https://rest.bandsintown.com/artists/"+artistSelect.value+"/events?app_id
             console.log($target);
             console.log($trigger);
         
-            // $trigger.addEventListener('click', () => {
-            //     console.log("hello");
               openModal($target);
-            // });
           });
 }
 
