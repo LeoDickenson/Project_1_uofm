@@ -1,4 +1,7 @@
+
+
 document.addEventListener('DOMContentLoaded', () => {
+
 
 var eventCity = [];
 var artistSelect = document.querySelector("#userArtist");
@@ -43,8 +46,13 @@ function renderArtist() {
         var li = document.createElement("li");
         li.textContent = artistName;
         li.setAttribute("data-index", i);
+        
+        var button = document.createElement("button");
+        button.textContent = "Delete";
 
+        li.appendChild(button);
         artist.appendChild(li);
+        
     }
 }
 
@@ -52,16 +60,18 @@ function init() {
     var storedArtist = JSON.parse(localStorage.getItem("artistList"));
     if (storedArtist !== null) {
         artistList = storedArtist;
+        
     }
     renderArtist();
 }
 
 function storeArtist() {
     localStorage.setItem("artistList",JSON.stringify(artistList));
+    
 }
 
 document.querySelector("#btn").addEventListener("click",function(event) {
-    event.preventDefault();
+    // event.preventDefault();
     console.log(artistSelect.value);
 fetch("https://rest.bandsintown.com/artists/"+artistSelect.value+"/events?app_id=510&date=upcoming")
 .then(function(response){
@@ -69,6 +79,7 @@ fetch("https://rest.bandsintown.com/artists/"+artistSelect.value+"/events?app_id
 })
 
 .then(function(data){
+ 
     console.log(data);
 
     if (data.length === 0) {
@@ -114,7 +125,7 @@ fetch("https://rest.bandsintown.com/artists/"+artistSelect.value+"/events?app_id
 
     artistList.push(artistText);
     artistSelect.value = "";
-
+    
     storeArtist();
     renderArtist();
 
@@ -123,6 +134,19 @@ fetch("https://rest.bandsintown.com/artists/"+artistSelect.value+"/events?app_id
 })
 
 init();
+
+artist.addEventListener("click", function(event) {
+var element = event.target;
+
+if (element.matches("button") === true) {
+  var index = element.parentElement.getAttribute("data-index");
+  artistList.splice(index, 1);
+  console.log(artistList);
+
+  storeArtist();
+  renderArtist();
+}
+});
 
 document.querySelector("#eventArticle").addEventListener("click",function(e) {
     console.log(e.target.textContent);

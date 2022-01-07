@@ -47,3 +47,11 @@ html {
 #aboutTxt {
     margin-right: 30px;
 }
+li {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 5px;
+    /* background-color: hsla(44, 100%, 77%, 0.75); */
+    color: black;
+    font-weight: bolder;
+  }
