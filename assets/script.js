@@ -92,64 +92,28 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector("#btn").addEventListener("click", function (event) {
         // event.preventDefault();
         console.log(artistSelect.value);
+
+        if (artistSelect.value === "") {
+            console.log("zero");
+            function openModal($el) {
+                console.log($el);
+                $el.classList.add('is-active');
+            }
+
+            (document.querySelectorAll('.js-modal-trigger') || []).forEach(($trigger) => {
+                const modal = $trigger.dataset.target;
+                const $target = document.getElementById(modal);
+                console.log($target);
+                console.log($trigger);
+
+                // $trigger.addEventListener('click', () => {
+                //     console.log("hello");
+                openModal($target);
+                // });
+            });
+        }
+
         fetchAPI(artistSelect.value)
-        // fetch("https://rest.bandsintown.com/artists/"+artistSelect.value+"/events?app_id=510&date=upcoming")
-        // .then(function(response){
-        //     return response.json();
-        // })
-
-        // .then(function(data){
-
-        //     console.log(data);
-
-        //     if (data.length === 0) {
-        //         console.log("zero");
-        //         function openModal($el) {
-        //             console.log($el);
-        //             $el.classList.add('is-active');
-        //           }
-
-        //           (document.querySelectorAll('.js-modal-trigger') || []).forEach(($trigger) => {
-        //             const modal = $trigger.dataset.target;
-        //             const $target = document.getElementById(modal);
-        //             console.log($target);
-        //             console.log($trigger);
-
-        //             // $trigger.addEventListener('click', () => {
-        //             //     console.log("hello");
-        //               openModal($target);
-        //             // });
-        //           });
-        // }
-
-        //     eventCity[0] = data[0].venue.city;
-        //     document.querySelector("#eventCity1").textContent = eventCity[0];
-
-        //     eventCity[1] = data[1].venue.city;
-        //     document.querySelector("#eventCity2").textContent = eventCity[1];
-
-        //     eventCity[2] = data[2].venue.city;
-        //     document.querySelector("#eventCity3").textContent = eventCity[2];
-
-        //     eventCity[3] = data[3].venue.city;
-        //     document.querySelector("#eventCity4").textContent = eventCity[3];
-
-        //     eventCity[4] = data[4].venue.city;
-        //     document.querySelector("#eventCity5").textContent = eventCity[4];
-
-        //     var artistText = artistSelect.value.trim()
-
-        //     if (artistText === "") {
-        //         return;
-        //     }
-
-        //     artistList.push(artistText);
-        //     artistSelect.value = "";
-
-        //     storeArtist();
-        //     renderArtist();
-
-        // })
 
     })
 
@@ -182,6 +146,11 @@ document.addEventListener('DOMContentLoaded', () => {
                         // });
                     });
                 }
+                else{
+
+               
+
+                
 
                 eventCity[0] = data[0].venue.city;
                 document.querySelector("#eventCity1").textContent = eventCity[0];
@@ -209,6 +178,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 storeArtist();
                 renderArtist();
+            }
 
             })
     }
