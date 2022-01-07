@@ -39,15 +39,19 @@ html {
 }
 #bannertitle {
     background-color: hsla(44, 100%, 77%, 0.75);
+    text-decoration: underline;
 }
 #headtitle {
     color: hsl(0, 0%, 0%, 0.7);
+    font-size: 75px;
 }
 #headsub {
     color: hsl(0, 0%, 0%, 0.7);
 }
 #aboutNav {
     background-color: rgba(0, 0, 255, 0);
+    font-size: xx-large;
+
 }
 #aboutTxt {
     margin-right: 30px;
