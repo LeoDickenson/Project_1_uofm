@@ -3,6 +3,7 @@ html {
     background-color: #cccccc;
    }
 
+
 #brewArticle {
     background-color: hsla(44, 100%, 77%, 0.75);
     border-radius: 5px;
@@ -10,10 +11,12 @@ html {
     font-weight: bolder;
 }
 #brewHeading{
+
     background-color: hsla(348, 100%, 61%, 0.6);
     color: hsl(0, 0%, 0%, 0.7);
 }
 #eventArticle {
+
     background-color: hsla(44, 100%, 77%, 0.75);
     border-radius: 5px;
     color: black;
@@ -24,6 +27,7 @@ html {
     color: hsl(0, 0%, 0%, 0.7);
 }
 #chooseArticle {
+    text-align: center;
     background-color: hsla(44, 100%, 77%, 0.75);
     border-radius: 5px;
     margin-left: 15px;
@@ -47,11 +51,28 @@ html {
 #aboutTxt {
     margin-right: 30px;
 }
+
+#histDiv {
+    justify-content: left;
+}
+
 li {
     margin-top: 5px;
     margin-bottom: 5px;
     padding: 5px;
-    /* background-color: hsla(44, 100%, 77%, 0.75); */
+    border-bottom: 5px, solid, white;
     color: black;
     font-weight: bolder;
+  }
+li:hover {
+    cursor: pointer;
+}
+  .DelBtn {
+      background-color: hsla(44, 100%, 77%, 0);
+      border-radius: 6px;
+      margin-left: 10%;
+      cursor: pointer;
+  }
+  .DelBtn:hover {
+      background-color: rgba(0, 0, 0, 0.281);
   }

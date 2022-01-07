@@ -27,11 +27,13 @@ document.addEventListener('DOMContentLoaded', () => {
         $el.classList.remove('is-active');
     }
 
+
     function closeAllModals() {
         (document.querySelectorAll('.modal') || []).forEach(($modal) => {
             closeModal($modal);
         });
     }
+
 
     (document.querySelectorAll('.modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .button') || []).forEach(($close) => {
         const $target = $close.closest('.modal');
@@ -60,12 +62,14 @@ document.addEventListener('DOMContentLoaded', () => {
             li.textContent = artistName;
             li.setAttribute("data-index", i);
             li.setAttribute("class", "test");
-
-            var button = document.createElement("button");
-            button.textContent = "Delete";
+        
+        var button = document.createElement("button");
+        button.textContent = "Delete";
+        button.setAttribute("class","DelBtn")
 
             li.appendChild(button);
             artist.appendChild(li);
+
 
         }
     }
