@@ -5,6 +5,7 @@ html {
 
 
 #brewArticle {
+    text-align: center;
     background-color: hsla(44, 100%, 77%, 0.75);
     border-radius: 5px;
     margin-right: 15px;
@@ -16,7 +17,7 @@ html {
     color: hsl(0, 0%, 0%, 0.7);
 }
 #eventArticle {
-
+    text-align: center;
     background-color: hsla(44, 100%, 77%, 0.75);
     border-radius: 5px;
     color: black;
