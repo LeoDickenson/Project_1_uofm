@@ -1,7 +1,5 @@
 
-
 document.addEventListener('DOMContentLoaded', () => {
-
 
     var eventCity = [];
     var artistSelect = document.querySelector("#userArtist");
@@ -83,6 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function storeArtist() {
         localStorage.setItem("artistList", JSON.stringify(artistList));
+
 
     }
 
