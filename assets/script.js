@@ -6,34 +6,24 @@ document.addEventListener('DOMContentLoaded', () => {
     var artistList = [];
     var artist = document.querySelector("#artist-list");
     var artistCount = document.querySelector("#artist-count");
-    var artistInput = document.querySelector("#submit");
+    // var artistInput = document.querySelector("#submit");
 
 
     document.querySelector("#artist-list").addEventListener("click",function(e) {
         console.log( e.target.textContent.split("Delete")[0]);
          var userBandName =  e.target.textContent.split("Delete")[0];
         fetchAPI(userBandName)
-
-        // fetch("https://rest.bandsintown.com/artists/"+test+"/events?app_id=510&date=upcoming")
-        //     .then(function(response) {
-        //         return response.json();
-        //     })
-        //     .then(function(data) {
-        //         console.log(data);
-        //     })
         });
 
     function closeModal($el) {
         $el.classList.remove('is-active');
     }
 
-
     function closeAllModals() {
         (document.querySelectorAll('.modal') || []).forEach(($modal) => {
             closeModal($modal);
         });
     }
-
 
     (document.querySelectorAll('.modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .button') || []).forEach(($close) => {
         const $target = $close.closest('.modal');
@@ -69,8 +59,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
             li.appendChild(button);
             artist.appendChild(li);
-
-
         }
     }
 
@@ -78,20 +66,17 @@ document.addEventListener('DOMContentLoaded', () => {
         var storedArtist = JSON.parse(localStorage.getItem("artistList"));
         if (storedArtist !== null) {
             artistList = storedArtist;
-
         }
         renderArtist();
     }
 
     function storeArtist() {
         localStorage.setItem("artistList", JSON.stringify(artistList));
-
-
     }
 
     document.querySelector("#btn").addEventListener("click", function (event) {
-        // event.preventDefault();
         console.log(artistSelect.value);
+
 
         if (artistSelect.value === "") {
             console.log("zero");
@@ -114,6 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         fetchAPI(artistSelect.value)
+
 
     })
 
@@ -140,10 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         console.log($target);
                         console.log($trigger);
 
-                        // $trigger.addEventListener('click', () => {
-                        //     console.log("hello");
                         openModal($target);
-                        // });
                     });
                 }
                 else{
