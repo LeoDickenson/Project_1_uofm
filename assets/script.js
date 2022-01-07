@@ -6,34 +6,24 @@ document.addEventListener('DOMContentLoaded', () => {
     var artistList = [];
     var artist = document.querySelector("#artist-list");
     var artistCount = document.querySelector("#artist-count");
-    var artistInput = document.querySelector("#submit");
+    // var artistInput = document.querySelector("#submit");
 
 
     document.querySelector("#artist-list").addEventListener("click",function(e) {
         console.log( e.target.textContent.split("Delete")[0]);
          var userBandName =  e.target.textContent.split("Delete")[0];
         fetchAPI(userBandName)
-
-        // fetch("https://rest.bandsintown.com/artists/"+test+"/events?app_id=510&date=upcoming")
-        //     .then(function(response) {
-        //         return response.json();
-        //     })
-        //     .then(function(data) {
-        //         console.log(data);
-        //     })
         });
 
     function closeModal($el) {
         $el.classList.remove('is-active');
     }
 
-
     function closeAllModals() {
         (document.querySelectorAll('.modal') || []).forEach(($modal) => {
             closeModal($modal);
         });
     }
-
 
     (document.querySelectorAll('.modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .button') || []).forEach(($close) => {
         const $target = $close.closest('.modal');
@@ -69,8 +59,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
             li.appendChild(button);
             artist.appendChild(li);
-
-
         }
     }
 
@@ -78,79 +66,17 @@ document.addEventListener('DOMContentLoaded', () => {
         var storedArtist = JSON.parse(localStorage.getItem("artistList"));
         if (storedArtist !== null) {
             artistList = storedArtist;
-
         }
         renderArtist();
     }
 
     function storeArtist() {
         localStorage.setItem("artistList", JSON.stringify(artistList));
-
-
     }
 
     document.querySelector("#btn").addEventListener("click", function (event) {
-        // event.preventDefault();
         console.log(artistSelect.value);
         fetchAPI(artistSelect.value)
-        // fetch("https://rest.bandsintown.com/artists/"+artistSelect.value+"/events?app_id=510&date=upcoming")
-        // .then(function(response){
-        //     return response.json();
-        // })
-
-        // .then(function(data){
-
-        //     console.log(data);
-
-        //     if (data.length === 0) {
-        //         console.log("zero");
-        //         function openModal($el) {
-        //             console.log($el);
-        //             $el.classList.add('is-active');
-        //           }
-
-        //           (document.querySelectorAll('.js-modal-trigger') || []).forEach(($trigger) => {
-        //             const modal = $trigger.dataset.target;
-        //             const $target = document.getElementById(modal);
-        //             console.log($target);
-        //             console.log($trigger);
-
-        //             // $trigger.addEventListener('click', () => {
-        //             //     console.log("hello");
-        //               openModal($target);
-        //             // });
-        //           });
-        // }
-
-        //     eventCity[0] = data[0].venue.city;
-        //     document.querySelector("#eventCity1").textContent = eventCity[0];
-
-        //     eventCity[1] = data[1].venue.city;
-        //     document.querySelector("#eventCity2").textContent = eventCity[1];
-
-        //     eventCity[2] = data[2].venue.city;
-        //     document.querySelector("#eventCity3").textContent = eventCity[2];
-
-        //     eventCity[3] = data[3].venue.city;
-        //     document.querySelector("#eventCity4").textContent = eventCity[3];
-
-        //     eventCity[4] = data[4].venue.city;
-        //     document.querySelector("#eventCity5").textContent = eventCity[4];
-
-        //     var artistText = artistSelect.value.trim()
-
-        //     if (artistText === "") {
-        //         return;
-        //     }
-
-        //     artistList.push(artistText);
-        //     artistSelect.value = "";
-
-        //     storeArtist();
-        //     renderArtist();
-
-        // })
-
     })
 
     function fetchAPI(artist) {
@@ -176,10 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         console.log($target);
                         console.log($trigger);
 
-                        // $trigger.addEventListener('click', () => {
-                        //     console.log("hello");
                         openModal($target);
-                        // });
                     });
                 }
 
