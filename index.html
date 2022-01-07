@@ -40,7 +40,11 @@
           <p class="control has-icons-left">
             <input class="input is-link" name="submit" type="text" placeholder="Search" id="userArtist"></input>
             <br></br>
-            <button id="btn" class="button is-info">Submit</button>
+            <!-- <button id="btn" class="button is-info">Submit</button> -->
+            <!-- <button id="btn" class="button is-info" class="js-modal-trigger" data-target="modal-js-example">Submit</button> -->
+            <button id='btn' class="js-modal-trigger button is-info" data-target="modal-js-example">
+              Submit
+            </button>
             <br></br>
             <span class="icon is-left">
               <i class="fas fa-search" aria-hidden="true"></i>
@@ -49,18 +53,7 @@
         </div>
         <span hidden id="artist-count"></span>
         <ul id="artist-list"></ul>
-        <!-- <a class="panel-block is-active" id ="test1">
-          Chicago
-        </a>
-        <a class="panel-block is active" id ="test2">
-          Des Moines
-        </a>
-        <a class="panel-block is active" id ="test3">
-          Minneapolis
-        </a>
-        <a class="panel-block is active" id ="test4">
-          Detroit
-        </a> -->
+      
       </article>
 
     </div>
@@ -106,8 +99,25 @@
     </div>
 
     </section>
-
+    <div id="modal-js-example" class="modal">
+      <div class="modal-background"></div>
+    
+      <div class="modal-content">
+        <div class="box">
+          <p>If nothing shows for your selected artist/band, this means there are
+            no scheduled events for that artist/band. Please select another artist/band. 
+            Likewise, if you select a city after selecting an artist/band, and nothing 
+            shows, there are no breweries near that location. Please select another 
+            location.
+          </p>
+          <!-- Your content -->
+        </div>
+      </div>
+    
+      <button class="modal-close is-large" aria-label="close"></button>
+    </div>
   <script src="./assets/script.js"></script>
+  <!-- <script src="./assets/modal.js"></script> -->
 </body>
 
 </html>
