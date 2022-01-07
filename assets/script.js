@@ -1,5 +1,4 @@
 
-
 var eventCity = [];
 var artistSelect = document.querySelector("#userArtist");
 var artistList = [];
@@ -17,8 +16,13 @@ function renderArtist() {
         var li = document.createElement("li");
         li.textContent = artistName;
         li.setAttribute("data-index", i);
+        
+        var button = document.createElement("button");
+        button.textContent = "Delete";
 
+        li.appendChild(button);
         artist.appendChild(li);
+        
     }
 }
 
@@ -26,16 +30,18 @@ function init() {
     var storedArtist = JSON.parse(localStorage.getItem("artistList"));
     if (storedArtist !== null) {
         artistList = storedArtist;
+        
     }
-    // renderArtist();
+    renderArtist();
 }
 
 function storeArtist() {
     localStorage.setItem("artistList",JSON.stringify(artistList));
+    
 }
 
 document.querySelector("#btn").addEventListener("click",function(event) {
-    event.preventDefault();
+    // event.preventDefault();
     console.log(artistSelect.value);
 fetch("https://rest.bandsintown.com/artists/"+artistSelect.value+"/events?app_id=510&date=upcoming")
 .then(function(response){
@@ -43,55 +49,23 @@ fetch("https://rest.bandsintown.com/artists/"+artistSelect.value+"/events?app_id
 })
 
 .then(function(data){
+ 
     console.log(data);
 
     eventCity[0] = data[0].venue.city;
     document.querySelector("#eventCity1").textContent = eventCity[0];
-    // console.log(eventCity);
 
     eventCity[1] = data[1].venue.city;
     document.querySelector("#eventCity2").textContent = eventCity[1];
-    // console.log(eventCity);
-
+  
     eventCity[2] = data[2].venue.city;
     document.querySelector("#eventCity3").textContent = eventCity[2];
-    // console.log(eventCity);
-
+ 
     eventCity[3] = data[3].venue.city;
     document.querySelector("#eventCity4").textContent = eventCity[3];
-    // console.log(eventCity);
-
+ 
     eventCity[4] = data[4].venue.city;
     document.querySelector("#eventCity5").textContent = eventCity[4];
-    // console.log(eventCity);
-
-
-    // function renderArtist() {
-    //     artist.innerHTML ="";
-    //     artistCount.textContent = artistList.length;
-
-    //     for (var i = 0; i < artistList.length; i++) {
-    //         var artistList = artistList[i];
-
-    //         var li = document.createElement("li");
-    //         li.textContent = artistList;
-    //         li.setAttribute("data-index", i);
-
-    //         artist.appendChild(li);
-    //     }
-    // }
-
-    // function init() {
-    //     var storedArtist = JSON.parse(localStorage.getItem("artistList"));
-    //     if (storedArtist !== null) {
-    //         artistList = storedArtist;
-    //     }
-    //     renderArtist();
-    // }
-
-    // function storeArtist() {
-    //     localStorage.setItem("artistList",JSON.stringify(artistList));
-    // }
 
     var artistText = artistSelect.value.trim()
 
@@ -101,16 +75,28 @@ fetch("https://rest.bandsintown.com/artists/"+artistSelect.value+"/events?app_id
 
     artistList.push(artistText);
     artistSelect.value = "";
-
+    
     storeArtist();
     renderArtist();
-    // init();
 
 })
 
 })
 
 init();
+
+artist.addEventListener("click", function(event) {
+var element = event.target;
+
+if (element.matches("button") === true) {
+  var index = element.parentElement.getAttribute("data-index");
+  artistList.splice(index, 1);
+  console.log(artistList);
+
+  storeArtist();
+  renderArtist();
+}
+});
 
 document.querySelector("#eventArticle").addEventListener("click",function(e) {
     console.log(e.target.textContent);
@@ -158,16 +144,6 @@ document.querySelector("#eventArticle").addEventListener("click",function(e) {
         
     })
 
-    //HISTORY FUNCTION TEMPLATE
-//     function addHistory() {
-//         historyThree.textContent = historyTwo.textContent
-//         historyTwo.textContent = historyOne.textContent
-//         historyOne.textContent = userInput.value
-//         localStorage.setItem('histSlot1',historyOne.textContent)
-//         localStorage.setItem('histSlot2',historyTwo.textContent)
-//         localStorage.setItem('histSlot3',historyThree.textContent)
-//         return
-// }
 document.querySelector("#brew-site5b").textContent = "Bob's Brews"
 document.querySelector("#brew-site4b").textContent = "World's Best Brews"
 document.querySelector("#brew-site3b").textContent = "Slick Brews"
