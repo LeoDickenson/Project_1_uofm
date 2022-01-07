@@ -1,4 +1,4 @@
-
+document.addEventListener('DOMContentLoaded', () => {
 
 var eventCity = [];
 var artistSelect = document.querySelector("#userArtist");
@@ -6,6 +6,32 @@ var artistList = [];
 var artist = document.querySelector("#artist-list");
 var artistCount = document.querySelector("#artist-count");
 var artistInput = document.querySelector("#submit");
+
+function closeModal($el) {
+    $el.classList.remove('is-active');
+  }
+
+  function closeAllModals() {
+    (document.querySelectorAll('.modal') || []).forEach(($modal) => {
+      closeModal($modal);
+    });
+  }
+
+  (document.querySelectorAll('.modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .button') || []).forEach(($close) => {
+    const $target = $close.closest('.modal');
+
+    $close.addEventListener('click', () => {
+      closeModal($target);
+    });
+  });
+
+  document.addEventListener('keydown', (event) => {
+    const e = event || window.event;
+
+    if (e.keyCode === 27) { // Escape key
+      closeAllModals();
+    }
+  });
 
 function renderArtist() {
     artist.innerHTML ="";
@@ -27,7 +53,7 @@ function init() {
     if (storedArtist !== null) {
         artistList = storedArtist;
     }
-    // renderArtist();
+    renderArtist();
 }
 
 function storeArtist() {
@@ -45,53 +71,40 @@ fetch("https://rest.bandsintown.com/artists/"+artistSelect.value+"/events?app_id
 .then(function(data){
     console.log(data);
 
+    if (data.length === 0) {
+        console.log("zero");
+        function openModal($el) {
+            console.log($el);
+            $el.classList.add('is-active');
+          }
+        
+          (document.querySelectorAll('.js-modal-trigger') || []).forEach(($trigger) => {
+            const modal = $trigger.dataset.target;
+            const $target = document.getElementById(modal);
+            console.log($target);
+            console.log($trigger);
+        
+            // $trigger.addEventListener('click', () => {
+            //     console.log("hello");
+              openModal($target);
+            // });
+          });
+}
+
     eventCity[0] = data[0].venue.city;
     document.querySelector("#eventCity1").textContent = eventCity[0];
-    // console.log(eventCity);
 
     eventCity[1] = data[1].venue.city;
     document.querySelector("#eventCity2").textContent = eventCity[1];
-    // console.log(eventCity);
 
     eventCity[2] = data[2].venue.city;
     document.querySelector("#eventCity3").textContent = eventCity[2];
-    // console.log(eventCity);
 
     eventCity[3] = data[3].venue.city;
     document.querySelector("#eventCity4").textContent = eventCity[3];
-    // console.log(eventCity);
 
     eventCity[4] = data[4].venue.city;
     document.querySelector("#eventCity5").textContent = eventCity[4];
-    // console.log(eventCity);
-
-
-    // function renderArtist() {
-    //     artist.innerHTML ="";
-    //     artistCount.textContent = artistList.length;
-
-    //     for (var i = 0; i < artistList.length; i++) {
-    //         var artistList = artistList[i];
-
-    //         var li = document.createElement("li");
-    //         li.textContent = artistList;
-    //         li.setAttribute("data-index", i);
-
-    //         artist.appendChild(li);
-    //     }
-    // }
-
-    // function init() {
-    //     var storedArtist = JSON.parse(localStorage.getItem("artistList"));
-    //     if (storedArtist !== null) {
-    //         artistList = storedArtist;
-    //     }
-    //     renderArtist();
-    // }
-
-    // function storeArtist() {
-    //     localStorage.setItem("artistList",JSON.stringify(artistList));
-    // }
 
     var artistText = artistSelect.value.trim()
 
@@ -104,7 +117,6 @@ fetch("https://rest.bandsintown.com/artists/"+artistSelect.value+"/events?app_id
 
     storeArtist();
     renderArtist();
-    // init();
 
 })
 
@@ -125,7 +137,6 @@ document.querySelector("#eventArticle").addEventListener("click",function(e) {
             
             var brewery = data[0].name;
             var website = data[0].website_url;
-            // console.log(brewery);
 
             document.querySelector("#brew-site1b").textContent = brewery;
             document.querySelector("#brew-site1b").setAttribute("href", website);
@@ -158,16 +169,6 @@ document.querySelector("#eventArticle").addEventListener("click",function(e) {
         
     })
 
-    //HISTORY FUNCTION TEMPLATE
-//     function addHistory() {
-//         historyThree.textContent = historyTwo.textContent
-//         historyTwo.textContent = historyOne.textContent
-//         historyOne.textContent = userInput.value
-//         localStorage.setItem('histSlot1',historyOne.textContent)
-//         localStorage.setItem('histSlot2',historyTwo.textContent)
-//         localStorage.setItem('histSlot3',historyThree.textContent)
-//         return
-// }
 document.querySelector("#brew-site5b").textContent = "Bob's Brews"
 document.querySelector("#brew-site4b").textContent = "World's Best Brews"
 document.querySelector("#brew-site3b").textContent = "Slick Brews"
@@ -179,3 +180,5 @@ document.querySelector("#eventCity4").textContent = "World's Best City"
 document.querySelector("#eventCity3").textContent = "Slick City"
 document.querySelector("#eventCity2").textContent = "Friendly City"
 document.querySelector("#eventCity1").textContent = "City By Betty"
+
+});
