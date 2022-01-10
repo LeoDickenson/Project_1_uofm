@@ -37,7 +37,7 @@ https://rest.bandsintown.com
 
 ## Screenshots
 
-![App Screenshot](https://onedrive.live.com/?cid=7A22F02D86589448&id=7A22F02D86589448%215600&parId=7A22F02D86589448%21131&o=OneUp)
+![App Screenshot](https://github.com/LeoDickenson/Project_1_uofm/blob/main/assets/pictures/ScreenShot.JPG)
 
 ## Roadmap
 
