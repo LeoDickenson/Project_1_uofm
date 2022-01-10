@@ -37,11 +37,18 @@ https://rest.bandsintown.com
 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://onedrive.live.com/?cid=7A22F02D86589448&id=7A22F02D86589448%215600&parId=7A22F02D86589448%21131&o=OneUp)
+
 ## Roadmap
 
-- Add dates to the Cities that are populated by the Artist/Band search
+- Add dates to the Cities that are populated by the Artist/Band search.
 
-- Add a map that loads when you select a local brewery with the locations of the populated local breweries as well as the event location
+- Add a map that loads when you select a local brewery with the locations of the populated local breweries as well as the event location.
 
-- Add "Sold Out" icon if tickets for the show are no longer available
+- Add "Sold Out" icon if tickets for the show are no longer available.
+
+- Add functionality to our "About" clickable in the navbar. Link to another HTML page with information: Story, Contact Info, Colaborator Info, etc.
+
+- Add a function to allow the user to cycle through both shows and breweries 5 at a time.
+
+- Continue to refine the site and search for any other issues that arise.
