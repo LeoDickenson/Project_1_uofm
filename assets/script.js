@@ -6,8 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
     var artistList = [];
     var artist = document.querySelector("#artist-list");
     var artistCount = document.querySelector("#artist-count");
-    // var artistInput = document.querySelector("#submit");
-
 
     document.querySelector("#artist-list").addEventListener("click",function(e) {
         console.log( e.target.textContent.split("Delete")[0]);
@@ -91,15 +89,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.log($target);
                 console.log($trigger);
 
-                // $trigger.addEventListener('click', () => {
-                //     console.log("hello");
                 openModal($target);
-                // });
             });
         }
 
         fetchAPI(artistSelect.value)
-
 
     })
 
@@ -130,10 +124,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     });
                 }
                 else{
-
-               
-
-                
 
                 eventCity[0] = data[0].venue.city;
                 document.querySelector("#eventCity1").textContent = eventCity[0];
